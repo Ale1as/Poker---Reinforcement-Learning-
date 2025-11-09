@@ -433,7 +433,7 @@ class PokerVisualizerGUI:
         self.canvas.create_oval(50, 100, 650, 500, fill='#2d5a3d', outline='#FFD700', width=3)
         
         # Draw players
-        self.draw_player(0, 250, 520, "🤖 RL Agent")
+        self.draw_player(0, 250, 470, "🤖 RL Agent")  # moved up slightly so cards are visible
         self.draw_player(1, 50, 200, "🎯 Tight Player")
         self.draw_player(2, 500, 200, "🎲 Loose Player")
         
@@ -467,7 +467,7 @@ class PokerVisualizerGUI:
             self.canvas.create_text(x+90, y+85, text="FOLDED", font=("Arial", 12, "bold"), fill='red')
         else:
             for i, card in enumerate(self.game.players_hands[player_id]):
-                self.draw_card(card, x+20+i*70, y+70, hidden=(player_id != 0))
+                self.draw_card(card, x+20+i*70, y+65, hidden=(player_id != 0))
     
     def draw_card(self, card, x, y, hidden=False):
         # Card rectangle
